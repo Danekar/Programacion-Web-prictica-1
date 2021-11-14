@@ -21,15 +21,31 @@ $(document).ready(function(){
   }
 
   function llaveBuscador(mano){
+    var manoDerecha = $("#derecha").attr("alt");
     if(mano.alt=="llave"){
         $(mano).attr("src", "../imagenes/mano-con-llave.png");
         jugadorPun++;
         $("#jugador").html("Puntos del jugador: "+jugadorPun);
+        setTimeout(resetImg,2000);
     }else{
+        $(mano).attr("src", "../imagenes/mano-sin-llave.png");
         maquinaPun++;
         $("#maquina").html("Puntos de la maquina: "+maquinaPun);
-       
-    }
+            if(manoDerecha=="llave"){
+                setTimeout(Derechallave,2000)  
+            }else{
+                setTimeout(Izquierdallave,2000)  
+
+            }
+            setTimeout(resetImg,4000);  
+        }
+          
+  }
+  function Derechallave(){
+    $("#derecha").attr("src","../imagenes/mano-con-llave.png");
+  }
+  function Izquierdallave(){
+    $("#izquierda").attr("src","../imagenes/mano-con-llave.png");
   }
 
   function reinicia(){
@@ -42,13 +58,16 @@ $(document).ready(function(){
 
   function pista(){
     var manoDerecha = $("#derecha").attr("alt");
-    var manoIzquierda = $("#izquierda").attr("alt");
-
     if(manoDerecha=="llave"){
         $("#pista").html("La llave está en la mano: derecha");  
     }else{
         $("#pista").html("La llave está en la mano: izquierda");  
 
     }
+  }
+
+  function resetImg(){
+    $("#derecha").attr("src","../imagenes/mano-cerrada.png");
+    $("#izquierda").attr("src","../imagenes/mano-cerrada.png");
   }
 
