@@ -18,18 +18,19 @@
           </th>
       </tr>
       <tr>
-          <th> <img id="imgDerecha" src="../imagenes/mano-cerrada.png" alt=""></th>
-          <th> <img id="imgIzquierda" src="../imagenes/mano-cerrada.png" alt=""></th>
+          <th> <img id="izquierda" src="../imagenes/mano-cerrada.png" alt=""></th>
+          <th> <img id="derecha" src="../imagenes/mano-cerrada.png" alt=""></th>
       </tr>
       <tr>
-          <th class="contandores" style="background-color: orange;"> Puntos del jugador: 0  </th>
-          <th class="contandores" style="background-color: orange;"> Puntos de la maquina: 0 </th>
+          <th class="contandores" id="jugador" style="background-color: orange;"> Puntos del jugador: 0  </th>
+          <th class="contandores" id="maquina" style="background-color: orange;"> Puntos de la maquina: 0 </th>
       </tr>
       <tr>
-          <th><button>Reiniciar Contador</button></th>
-          <th><button>Pista</button></th>
+          <th><button onclick="reinicia();">Reiniciar Contador</button></th>
+          <th><button onclick="pista();">Pista</button></th>
       </tr>
   </table>
+  <h6 id="pista"></h6>
     
 
 
