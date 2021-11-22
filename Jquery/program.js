@@ -66,9 +66,9 @@ $(document).ready(function(){
     var manoDerecha = $("#derecha").attr("alt");
     //console.log(manoDerecha);
     if(manoDerecha=="llave"){
-        $("#pista").html("La llave está en la mano: derecha");  
+        $("#pista").html("La llave está en la mano derecha");  
     }else{
-        $("#pista").html("La llave está en la mano: izquierda");  
+        $("#pista").html("La llave está en la mano izquierda");  
     }
   }
 
