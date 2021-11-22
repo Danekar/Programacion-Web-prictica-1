@@ -1,13 +1,16 @@
 var jugadorPun=0;
 var maquinaPun=0;
+var manoDerecha;
+//window.onload = llaveEscondedor()
 
 $(document).ready(function(){
+    llaveEscondedor();
     $("img").click(function(){
       llaveBuscador(this);
     });
   });
 
-  window.onload = llaveEscondedor()
+ 
 
   function llaveEscondedor(){
       var llave = Math.floor(Math.random() * 2);
@@ -19,7 +22,7 @@ $(document).ready(function(){
   }
 
   function llaveBuscador(mano){
-    var manoDerecha = $("#derecha").attr("alt");
+    //llaveEscondedor();
     if(mano.alt=="llave"){
         $(mano).attr("src", "../imagenes/mano-con-llave.png");
         jugadorPun++;
@@ -27,6 +30,7 @@ $(document).ready(function(){
         mano.alt="";
         setTimeout(resetImg,2000);   
     }else{
+        manoDerecha=$("#derecha").attr("alt");
         $(mano).attr("src", "../imagenes/mano-sin-llave.png");
         maquinaPun++;
         $("#maquina").html("Puntos de la maquina: "+maquinaPun);
@@ -38,8 +42,10 @@ $(document).ready(function(){
             }
             setTimeout(resetImg,4000);  
         }
-        limpiaPista();
+        mano.alt="";
         llaveEscondedor();
+        limpiaPista();
+        
   }
   function Derechallave(){
     $("#derecha").attr("src","../imagenes/mano-con-llave.png");
@@ -58,6 +64,7 @@ $(document).ready(function(){
 
   function pista(){
     var manoDerecha = $("#derecha").attr("alt");
+    //console.log(manoDerecha);
     if(manoDerecha=="llave"){
         $("#pista").html("La llave está en la mano: derecha");  
     }else{
