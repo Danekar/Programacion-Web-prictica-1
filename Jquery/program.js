@@ -1,7 +1,6 @@
 var jugadorPun=0;
 var maquinaPun=0;
 var manoDerecha;
-//window.onload = llaveEscondedor()
 
 $(document).ready(function(){
     llaveEscondedor();
@@ -38,7 +37,6 @@ $(document).ready(function(){
                 setTimeout(Derechallave,2000)  
             }else{
                 setTimeout(Izquierdallave,2000)  
-
             }
             manoDerecha.alt="";
             $("#izquierda").attr("alt"," ");
@@ -67,8 +65,7 @@ $(document).ready(function(){
   }
 
   function pista(){
-    var manoDerecha = $("#derecha").attr("alt");
-    console.log(manoDerecha);
+    manoDerecha = $("#derecha").attr("alt");
     if(manoDerecha=="llave"){
         $("#pista").html("La llave está en la mano derecha");  
     }else{
