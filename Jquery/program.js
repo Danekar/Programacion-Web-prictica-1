@@ -40,9 +40,13 @@ $(document).ready(function(){
                 setTimeout(Izquierdallave,2000)  
 
             }
+            manoDerecha.alt="";
+            $("#izquierda").attr("alt"," ");
             setTimeout(resetImg,4000);  
         }
         mano.alt="";
+        $("#izquierda").attr("alt"," ");
+        $("#derecha").attr("alt"," ");
         llaveEscondedor();
         limpiaPista();
         
@@ -64,7 +68,7 @@ $(document).ready(function(){
 
   function pista(){
     var manoDerecha = $("#derecha").attr("alt");
-    //console.log(manoDerecha);
+    console.log(manoDerecha);
     if(manoDerecha=="llave"){
         $("#pista").html("La llave está en la mano derecha");  
     }else{
